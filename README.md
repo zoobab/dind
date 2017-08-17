@@ -3,7 +3,7 @@ About ZooDind
 
 ZooDinD means Zoobab's Docker-in-Docker.
 
-It is based on Alpine Linux, Docker and SSH.
+It is based on Alpine Linux, Docker and/or SSH.
 
 Usage
 =====
