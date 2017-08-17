@@ -80,3 +80,9 @@ Server:
  OS/Arch:      linux/amd64
  Experimental: false
 ```
+
+Todo
+====
+
+* add more docker versions (1.12.6, etc...)
+* ssh dotconfig
