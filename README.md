@@ -41,7 +41,7 @@ Usage without SSH and with Docker exec:
 You can also launch it without SSH:
 
 ```
-$ docker run  -p 1705:22 --privileged --name zoodind zoobab/zoodind
+$ docker run --privileged --name zoodind zoobab/zoodind
 time="2017-08-17T13:47:39.197079256Z" level=info msg="libcontainerd: new containerd process, pid: 18"
 time="2017-08-17T13:47:40.340923831Z" level=info msg="Graph migration to content-addressability took 0.00 seconds"
 time="2017-08-17T13:47:40.341737960Z" level=warning msg="Your kernel does not support swap memory limit"
