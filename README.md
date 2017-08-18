@@ -107,6 +107,7 @@ Server:
 Todo
 ====
 
-* add more docker versions (1.12.6, debian/ubuntu based,...)
-* ssh dotconfig
-* use a common directory to avoid duplicates
+* -- add more docker versions: 1.12.6, 1.11.2--
+* add ubuntu based images
+* --ssh dotconfig--
+* use a skel directory to make templates
