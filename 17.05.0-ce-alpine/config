@@ -1,0 +1,3 @@
+SSH_PORT="1705"
+SSH_CONFIG="../common/dotsshconfig/config_zoodind"
+TAG="17.05-alpine"

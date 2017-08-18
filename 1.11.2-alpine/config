@@ -1,0 +1,3 @@
+SSH_PORT="1112"
+SSH_CONFIG="../common/dotsshconfig/config_zoodind"
+TAG="1.11.2-alpine"

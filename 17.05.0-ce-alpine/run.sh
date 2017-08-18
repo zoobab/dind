@@ -1,2 +1,3 @@
 #!/bin/bash
-docker run -d -p 1705:22 --privileged --name zoodind zoobab/zoodind
+source config
+docker run --rm -d -p $SSH_PORT:22 --privileged --name zoodind-$TAG zoobab/zoodind:$TAG

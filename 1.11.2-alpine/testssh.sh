@@ -1,6 +1,7 @@
 #!/bin/bash
-chmod 600 id_rsa
-ssh -q -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i id_rsa root@127.0.0.1 -p1112 "docker ps >> /dev/null"
+set -e
+source config
+ssh -F $SSH_CONFIG zoodind-$SSH_PORT "docker ps >> /dev/null"
 if [[ $? -eq 0 ]]; then
     echo "OK, SSH+Docker test succeeded"
 else
