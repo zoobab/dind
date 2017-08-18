@@ -5,6 +5,8 @@ ZooDinD means Zoobab's Docker-in-Docker.
 
 It is based on Alpine Linux, Docker and/or SSH.
 
+It is useful to debug different versions of the Docker Daemon.
+
 Usage
 =====
 
