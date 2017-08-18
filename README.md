@@ -30,6 +30,27 @@ time="2017-08-17T13:47:40.686820051Z" level=info msg="Docker daemon" commit=v17.
 time="2017-08-17T13:47:40.704376372Z" level=info msg="API listen on /var/run/docker.sock"
 ```
 
+If you want to run a specific version, ie "1.12.6-alpine", or "17.05.0-ce-alpine":
+
+```
+$ docker run --privileged --name zoodind zoobab/zoodind:1.12.6-alpine
+time="2017-08-18T08:04:18.591313245Z" level=info msg="libcontainerd: new containerd process, pid: 17"
+time="2017-08-18T08:04:19.611850956Z" level=error msg="Failed to built-in GetDriver graph aufs /var/lib/docker"
+time="2017-08-18T08:04:19.612371623Z" level=error msg="Failed to built-in GetDriver graph devicemapper /var/lib/docker"
+time="2017-08-18T08:04:20.191656871Z" level=info msg="Graph migration to content-addressability took 0.00 seconds"
+time="2017-08-18T08:04:20.192125880Z" level=warning msg="Your kernel does not support swap memory limit."
+time="2017-08-18T08:04:20.193349882Z" level=info msg="Loading containers: start."
+time="2017-08-18T08:04:20.197104561Z" level=warning msg="Running modprobe bridge br_netfilter failed with message: modprobe: can't change directory to '/lib/modules': No such file or directory\n, error: exit status 1"
+time="2017-08-18T08:04:20.198875736Z" level=warning msg="Running modprobe nf_nat failed with message: `modprobe: can't change directory to '/lib/modules': No such file or directory`, error: exit status 1"
+time="2017-08-18T08:04:20.201023739Z" level=warning msg="Running modprobe xt_conntrack failed with message: `modprobe: can't change directory to '/lib/modules': No such file or directory`, error: exit status 1"
+time="2017-08-18T08:04:20.334563554Z" level=info msg="Default bridge (docker0) is assigned with an IP address 172.18.0.0/16. Daemon option --bip can be used to set a preferred IP address"
+
+time="2017-08-18T08:04:20.411129641Z" level=info msg="Loading containers: done."
+time="2017-08-18T08:04:20.411834614Z" level=info msg="Daemon has completed initialization"
+time="2017-08-18T08:04:20.411937423Z" level=info msg="Docker daemon" commit=v1.12.6 graphdriver=overlay version=1.12.6
+time="2017-08-18T08:04:20.420797765Z" level=info msg="API listen on /var/run/docker.sock"
+```
+
 Then use docker exec:
 
 ```
@@ -84,5 +105,5 @@ Server:
 Todo
 ====
 
-* add more docker versions (1.12.6, etc...)
+* add more docker versions (1.12.6, debian/ubuntu based,...)
 * ssh dotconfig
