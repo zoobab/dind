@@ -32,7 +32,7 @@ time="2017-08-17T13:47:40.686820051Z" level=info msg="Docker daemon" commit=v17.
 time="2017-08-17T13:47:40.704376372Z" level=info msg="API listen on /var/run/docker.sock"
 ```
 
-If you want to run a specific version, ie "1.12.6-alpine", or "17.05.0-ce-alpine":
+If you want to run a specific version, ie "1.12.6-alpine", or "17.05.0-ce-alpine", or "1.11.2-alpine":
 
 ```
 $ docker run --privileged --name zoodind zoobab/zoodind:1.12.6-alpine
