@@ -109,3 +109,4 @@ Todo
 
 * add more docker versions (1.12.6, debian/ubuntu based,...)
 * ssh dotconfig
+* use a common directory to avoid duplicates
