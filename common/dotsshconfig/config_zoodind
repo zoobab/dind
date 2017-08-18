@@ -6,6 +6,9 @@ Host *
     UserKnownHostsFile /dev/null
     LogLevel QUIET
 
+Host zoodind-1103
+    Port 1103
+
 Host zoodind-1112
     Port 1112
 

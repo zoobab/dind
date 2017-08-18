@@ -1,0 +1,3 @@
+SSH_PORT="1103"
+SSH_CONFIG="../common/dotsshconfig/config_zoodind"
+TAG="1.10.3-ubuntu"

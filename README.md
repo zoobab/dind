@@ -111,3 +111,4 @@ Todo
 * add ubuntu based images
 * --ssh dotconfig--
 * use a skel directory to make templates
+* commit suicide if the docker daemon is not running after a while
