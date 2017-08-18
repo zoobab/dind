@@ -1,0 +1,23 @@
+Host zoodind-1112
+    Hostname 127.0.0.1
+    User root
+    Port 1112
+    IdentityFile ~/.ssh/id_rsa_zoodind
+    StrictHostKeyChecking no
+    UserKnownHostsFile=/dev/null
+
+Host zoodind-1126
+    Hostname 127.0.0.1
+    User root
+    Port 1126
+    IdentityFile ~/.ssh/id_rsa_zoodind
+    StrictHostKeyChecking no
+    UserKnownHostsFile=/dev/null
+
+Host zoodind-1705
+    Hostname 127.0.0.1
+    User root
+    Port 1705
+    IdentityFile ~/.ssh/id_rsa_zoodind
+    StrictHostKeyChecking no
+    UserKnownHostsFile=/dev/null
