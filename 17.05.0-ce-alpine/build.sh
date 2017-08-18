@@ -1,2 +1,4 @@
 #!/bin/bash
-docker build --no-cache -t zoodind:`basename $PWD` .
+set -e
+source config
+docker build -t zoodind:$TAG .
