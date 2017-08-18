@@ -112,3 +112,8 @@ Todo
 * --ssh dotconfig--
 * use a skel directory to make templates
 * commit suicide if the docker daemon is not running after a while
+
+Problems
+========
+
+* Docker Inc has removed all debs before v17.*: https://twitter.com/zoobab/status/898499634674507776
