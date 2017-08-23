@@ -12,10 +12,14 @@ Usage
 
 ## Usage with Docker exec
 
-You can also launch it without SSH:
+You can also launch it without SSH, but you have to specifying the TAG you want in the available the list:
+
+* 17.05.0-ce-alpine
+* 1.12.6-alpine
+* 1.11.2-alpine
 
 ```
-$ docker run --privileged --name zoodind zoobab/zoodind
+$ TAG="17.05.0-ce-alpine"; docker run --privileged --name zoodind-$TAG zoobab/zoodind:$TAG
 time="2017-08-17T13:47:39.197079256Z" level=info msg="libcontainerd: new containerd process, pid: 18"
 time="2017-08-17T13:47:40.340923831Z" level=info msg="Graph migration to content-addressability took 0.00 seconds"
 time="2017-08-17T13:47:40.341737960Z" level=warning msg="Your kernel does not support swap memory limit"
