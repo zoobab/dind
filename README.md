@@ -1,7 +1,7 @@
-About ZooDind
-=============
+About Dind
+==========
 
-ZooDinD means Zoobab's Docker-in-Docker.
+DinD is Docker-in-Docker.
 
 It is based on Alpine Linux, Docker and/or SSH.
 
@@ -20,7 +20,7 @@ You can also launch it without SSH, but you have to specifying the TAG you want 
 * 1.11.2-alpine
 
 ```
-$ TAG="17.05.0-ce-alpine"; docker run --privileged --name zoodind-$TAG zoobab/zoodind:$TAG
+$ TAG="17.05.0-ce-alpine"; docker run --privileged --name dind-$TAG zoobab/dind:$TAG
 time="2017-08-17T13:47:39.197079256Z" level=info msg="libcontainerd: new containerd process, pid: 18"
 time="2017-08-17T13:47:40.340923831Z" level=info msg="Graph migration to content-addressability took 0.00 seconds"
 time="2017-08-17T13:47:40.341737960Z" level=warning msg="Your kernel does not support swap memory limit"
@@ -40,7 +40,7 @@ time="2017-08-17T13:47:40.704376372Z" level=info msg="API listen on /var/run/doc
 Then use docker exec:
 
 ```
-$ TAG="17.05.0-ce-alpine"; docker exec zoodind-$TAG docker version
+$ TAG="17.05.0-ce-alpine"; docker exec dind-$TAG docker version
 Client:
  Version:      17.05.0-ce
  API version:  1.29
@@ -65,9 +65,9 @@ First, install the SSH keys in your $HOME/.ssh, this is done with the shell scri
 
 ```
 $ ./installsshkeys.sh 
-Copying config_zoodind to your /home/zoobab/.ssh/ ...[OK]
-Copying id_rsa_zoodind to your /home/zoobab/.ssh/ ...[OK]
-Copying id_rsa_zoodind.pub to your /home/zoobab/.ssh/ ...[OK]
+Copying config_dind to your /home/zoobab/.ssh/ ...[OK]
+Copying id_rsa_dind to your /home/zoobab/.ssh/ ...[OK]
+Copying id_rsa_dind.pub to your /home/zoobab/.ssh/ ...[OK]
 ```
 
 Some basic commands on how to use it:
@@ -78,9 +78,9 @@ $ ./run-local.sh
 7205cedb9aa6cd2d72410cf08f93035b895e60b063886d4baad3c12887ce7c60
 $ ./testssh.sh
 OK, SSH+Docker test succeeded
-$ ssh -F ~/.ssh/config_zoodind zoodind-1705 hostname
+$ ssh -F ~/.ssh/config_dind dind-1705 hostname
 7205cedb9aa6
-$ ssh -F ~/.ssh/config_zoodind zoodind-1705 docker version
+$ ssh -F ~/.ssh/config_dind dind-1705 docker version
 Client:
  Version:      17.05.0-ce
  API version:  1.29
@@ -107,7 +107,7 @@ Todo
 * ~~ssh dotconfig~~
 * use a skel directory to make templates
 * commit suicide if the docker daemon is not running after a while
-* be able to run as a oneliner: $ docker run -it zoodind:1.12.6 docker run -it alpine /bin/sh
+* be able to run as a oneliner: $ docker run -it dind:1.12.6 docker run -it alpine /bin/sh
 * provide shell wrappers to replace the main docker binary (in /usr/local/bin for example)
 
 Problems

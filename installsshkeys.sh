@@ -16,6 +16,6 @@ cp $SSHCONFIGDIR/$FILE ~/.ssh/ && chmod 600 ~/.ssh/$FILE
 checkreturncode
 }
 
-copyfile config_zoodind
-copyfile id_rsa_zoodind
-copyfile id_rsa_zoodind.pub
+copyfile config_dind
+copyfile id_rsa_dind
+copyfile id_rsa_dind.pub
