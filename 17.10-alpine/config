@@ -1,3 +1,3 @@
-SSH_PORT="1705"
+SSH_PORT="1710"
 SSH_CONFIG="../common/dotsshconfig/config_dind"
-TAG="17.05-alpine"
+TAG="17.10-alpine"
