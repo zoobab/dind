@@ -20,7 +20,7 @@ You can also launch it without SSH, but you have to specifying the TAG you want 
 * 1.11.2-alpine
 
 ```
-$ TAG="17.05.0-ce-alpine"; docker run --privileged --name dind-$TAG zoobab/dind:$TAG
+$ TAG="17.05-alpine"; docker run --privileged --name dind-$TAG zoobab/dind:$TAG
 time="2017-08-17T13:47:39.197079256Z" level=info msg="libcontainerd: new containerd process, pid: 18"
 time="2017-08-17T13:47:40.340923831Z" level=info msg="Graph migration to content-addressability took 0.00 seconds"
 time="2017-08-17T13:47:40.341737960Z" level=warning msg="Your kernel does not support swap memory limit"
@@ -40,7 +40,7 @@ time="2017-08-17T13:47:40.704376372Z" level=info msg="API listen on /var/run/doc
 Then use docker exec:
 
 ```
-$ TAG="17.05.0-ce-alpine"; docker exec dind-$TAG docker version
+$ TAG="17.05-alpine"; docker exec dind-$TAG docker version
 Client:
  Version:      17.05.0-ce
  API version:  1.29
@@ -73,7 +73,7 @@ Copying id_rsa_dind.pub to your /home/zoobab/.ssh/ ...[OK]
 Some basic commands on how to use it:
 
 ```
-$ cd 17.05.0-ce-alpine
+$ cd 17.05-alpine
 $ ./run-local.sh
 7205cedb9aa6cd2d72410cf08f93035b895e60b063886d4baad3c12887ce7c60
 $ ./testssh.sh
