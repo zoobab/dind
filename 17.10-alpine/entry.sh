@@ -1,10 +1,12 @@
 #!/bin/sh
-/usr/sbin/sshd &
-dockerd &
-
+#echo -ne "Launching sshd..."
+#/usr/sbin/sshd &
+#echo -ne "OK\n"
+echo -ne "Launching docker..."
+screen -d -m dockerd
 DOCKERSOCK="/var/run/docker.sock"
-echo "Waiting until docker socker file ($DOCKERSOCK) is present..."
-until [ -f $DOCKERSOCK ]; do sleep 1; done
+until [ -S $DOCKERSOCK ]; do sleep 1; done
+echo -ne "OK\n"
 
 DIR="/mnt"
 if [ -z "$REPONAME" ]; then
