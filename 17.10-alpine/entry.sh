@@ -2,6 +2,10 @@
 /usr/sbin/sshd &
 dockerd &
 
+DOCKERSOCK="/var/run/docker.sock"
+echo "Waiting until docker socker file ($DOCKERSOCK) is present..."
+until [ -f $DOCKERSOCK ]; do sleep 1; done
+
 DIR="/mnt"
 if [ -z "$REPONAME" ]; then
     echo "REPONAME is not defined, sleeping forever..."
