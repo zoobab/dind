@@ -14,6 +14,7 @@ Usage
 
 You can also launch it without SSH, but you have to specifying the TAG you want in the available the list:
 
+* 18.06-alpine
 * 17.10-alpine
 * 17.05-alpine
 * 1.12.6-alpine
@@ -106,9 +107,11 @@ Todo
 * add ubuntu based images
 * ~~ssh dotconfig~~
 * use a skel directory to make templates
-* commit suicide if the docker daemon is not running after a while
+* ~~commit suicide if the docker daemon is not running after a while~~
 * be able to run as a oneliner: $ docker run -it dind:1.12.6 docker run -it alpine /bin/sh
 * provide shell wrappers to replace the main docker binary (in /usr/local/bin for example)
+* expose the TCP port of docker
+* launch them all in one, with tests
 
 Problems
 ========

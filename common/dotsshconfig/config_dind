@@ -20,3 +20,6 @@ Host dind-1705
 
 Host dind-1710
     Port 1710
+
+Host dind-1806
+    Port 1806
