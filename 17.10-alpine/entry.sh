@@ -1,10 +1,10 @@
 #!/bin/sh
-#echo -ne "Launching sshd..."
-#/usr/sbin/sshd &
-#echo -ne "OK\n"
+echo -ne "Launching sshd..."
+/usr/sbin/sshd &
+echo -ne "OK\n"
 echo -ne "Launching docker..."
-screen -d -m dockerd
 DOCKERSOCK="/var/run/docker.sock"
+screen -d -m dockerd -H tcp://0.0.0.0:2375 -H unix://$DOCKERSOCK
 until [ -S $DOCKERSOCK ]; do sleep 1; done
 echo -ne "OK\n"
 

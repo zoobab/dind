@@ -1,4 +1,4 @@
-FROM alpine:3.7
+FROM alpine:3.8
 
 RUN apk update
 RUN apk add docker openssh screen
@@ -11,5 +11,5 @@ COPY id_rsa_dind.pub /root/.ssh/authorized_keys
 RUN chmod 600 /root/.ssh/authorized_keys
 
 COPY entry.sh /
-RUN chmod 777 /entry.sh
+EXPOSE 2375/tcp
 ENTRYPOINT ["/entry.sh"]

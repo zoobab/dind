@@ -1,7 +1,7 @@
 FROM alpine:3.4
 
 RUN apk update
-RUN apk add docker openssh
+RUN apk add docker openssh screen
 
 RUN ssh-keygen -A
 
@@ -11,5 +11,5 @@ COPY id_rsa_dind.pub /root/.ssh/authorized_keys
 RUN chmod 600 /root/.ssh/authorized_keys
 
 COPY entry.sh /
-RUN chmod 777 /entry.sh
+EXPOSE 2375/tcp
 ENTRYPOINT ["/entry.sh"]
