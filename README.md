@@ -21,7 +21,7 @@ REPONAME is not defined, sleeping forever...
 
 ## Usage with Docker exec
 
-Launch it now with a proper container name (-n mydind), and in background mode (-d):
+Launch it now with a proper container name (--name mydind), and in background mode (-d):
 
 ```
 $ docker run -d --privileged --name mydind zoobab/dind
