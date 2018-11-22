@@ -10,54 +10,58 @@ It is useful to debug different versions of the Docker Daemon.
 Usage
 =====
 
-## Usage with Docker exec
-
-You can also launch it without SSH, but you have to specifying the TAG you want in the available the list:
-
-* 18.06-alpine
-* 17.10-alpine
-* 17.05-alpine
-* 1.12.6-alpine
-* 1.11.2-alpine
+## Basic usage
 
 ```
-$ TAG="17.05-alpine"; docker run --privileged --name dind-$TAG zoobab/dind:$TAG
-time="2017-08-17T13:47:39.197079256Z" level=info msg="libcontainerd: new containerd process, pid: 18"
-time="2017-08-17T13:47:40.340923831Z" level=info msg="Graph migration to content-addressability took 0.00 seconds"
-time="2017-08-17T13:47:40.341737960Z" level=warning msg="Your kernel does not support swap memory limit"
-time="2017-08-17T13:47:40.341914513Z" level=warning msg="Your kernel does not support cgroup rt period"
-time="2017-08-17T13:47:40.341971179Z" level=warning msg="Your kernel does not support cgroup rt runtime"
-time="2017-08-17T13:47:40.343235779Z" level=info msg="Loading containers: start."
-time="2017-08-17T13:47:40.346638308Z" level=warning msg="Running modprobe bridge br_netfilter failed with message: modprobe: can't change directory to '/lib/modules': No such file or directory\n, error: exit status 1"
-time="2017-08-17T13:47:40.349276885Z" level=warning msg="Running modprobe nf_nat failed with message: `modprobe: can't change directory to '/lib/modules': No such file or directory`, error: exit status 1"
-time="2017-08-17T13:47:40.351867838Z" level=warning msg="Running modprobe xt_conntrack failed with message: `modprobe: can't change directory to '/lib/modules': No such file or directory`, error: exit status 1"
-time="2017-08-17T13:47:40.530985786Z" level=info msg="Default bridge (docker0) is assigned with an IP address 172.18.0.0/16. Daemon option --bip can be used to set a preferred IP address"
-time="2017-08-17T13:47:40.634905127Z" level=info msg="Loading containers: done."
-time="2017-08-17T13:47:40.686731734Z" level=info msg="Daemon has completed initialization"
-time="2017-08-17T13:47:40.686820051Z" level=info msg="Docker daemon" commit=v17.05.0-ce graphdriver=overlay2 version=17.05.0-ce
-time="2017-08-17T13:47:40.704376372Z" level=info msg="API listen on /var/run/docker.sock"
+$ docker run --privileged zoobab/dind
+Launching sshd...OK
+Launching docker...OK
+REPONAME is not defined, sleeping forever...
+```
+
+## Usage with Docker exec
+
+Launch it now with a proper container name (-n mydind), and in background mode (-d):
+
+```
+$ docker run -d --privileged --name mydind zoobab/dind
+3fbb35b81ea244324406bd0eb83e2e5b659a5f09eef3561548e74e995785457d
 ```
 
 Then use docker exec:
 
 ```
-$ TAG="17.05-alpine"; docker exec dind-$TAG docker version
+$ docker exec mydind docker version
 Client:
- Version:      17.05.0-ce
- API version:  1.29
- Go version:   go1.8.1
- Git commit:   v17.05.0-ce
- Built:        Tue May 16 10:10:15 2017
- OS/Arch:      linux/amd64
+ Version:           18.06.1-ce
+ API version:       1.38
+ Go version:        go1.10.1
+ Git commit:        d72f525745
+ Built:             Wed Sep  5 20:39:22 2018
+ OS/Arch:           linux/amd64
+ Experimental:      false
 
 Server:
- Version:      17.05.0-ce
- API version:  1.29 (minimum version 1.12)
- Go version:   go1.8.1
- Git commit:   v17.05.0-ce
- Built:        Tue May 16 10:10:15 2017
- OS/Arch:      linux/amd64
- Experimental: false
+ Engine:
+  Version:          18.06.1-ce
+  API version:      1.38 (minimum version 1.12)
+  Go version:       go1.10.1
+  Git commit:       v18.06.1-ce
+  Built:            Wed Sep  5 20:38:41 2018
+  OS/Arch:          linux/amd64
+  Experimental:     false
+```
+
+Try to launch a busybox shell:
+
+```
+$ docker exec -it mydind docker run -it busybox /bin/sh
+Unable to find image 'busybox:latest' locally
+latest: Pulling from library/busybox
+90e01955edcd: Pull complete
+Digest: sha256:2a03a6059f21e150ae84b0973863609494aad70f0a80eaeb64bddd8d92465812
+Status: Downloaded newer image for busybox:latest
+/ #
 ```
 
 ## Usage with SSH
@@ -99,6 +103,10 @@ Server:
  OS/Arch:      linux/amd64
  Experimental: false
 ```
+
+## Usage with TCP
+
+TODO: Document the usage with TCP here
 
 Todo
 ====
